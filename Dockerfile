@@ -2,7 +2,7 @@ FROM node:slim
 
 ENV PORT 3000
 
-WORKDIR /qrcode-template
+WORKDIR /qrcode-service
 
 COPY package*.json .
 RUN npm install

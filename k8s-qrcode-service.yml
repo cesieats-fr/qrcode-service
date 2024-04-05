@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: qrcode-template
+  name: qrcode-service
   namespace: cesieats-services
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: qrcode-template
+      app: qrcode-service
   template:
     metadata:
       labels:
-        app: qrcode-template
+        app: qrcode-service
     spec:
       containers:
-        - name: qrcode-template
-          image: kilme/qrcode-template:$IMAGE_VERSION
+        - name: qrcode-service
+          image: kilme/qrcode-service:$IMAGE_VERSION
           resources:
             limits:
               memory: "512Mi"
@@ -31,10 +31,10 @@ metadata:
   namespace: cesieats-services
 spec:
   selector:
-    app: qrcode-template
+    app: qrcode-service
   ports:
     - name: http
       protocol: TCP
       port: 3000
-      nodePort: 30199
+      nodePort: 30106
   type: NodePort

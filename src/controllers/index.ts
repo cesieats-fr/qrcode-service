@@ -1,21 +1,21 @@
 import { Request, Response } from 'express';
 
-const register = (req: Request, res: Response) => {
+const createQrCode = (req: Request, res: Response) => {
   res.status(200).json({ message: 'Hello, world!' });
 };
 
-const login = (req: Request, res: Response) => {
+const validateQrCode = (req: Request, res: Response) => {
   res.status(200).json({ message: 'Hello, world!' });
 };
 
-const deleteAccount = (req: Request, res: Response) => {
+const deleteQrCode = (req: Request, res: Response) => {
   res.status(200).json({ message: 'Hello, world!' });
 };
 
 const controller = {
-  register,
-  login,
-  deleteAccount,
+  createQrCode,
+  validateQrCode,
+  deleteQrCode,
 };
 
 export default controller;
